@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-indicator {
+    position: absolute;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    width: 0;
+    background: linear-gradient(to right, rgb(122, 3, 146), rgb(4, 205, 231), rgb(28, 42, 247),rgb(3, 212, 3),rgb(255, 252, 59),rgb(255, 174, 53),rgb(226, 0, 0));
+    z-index: 100;
+    animation: indicator forwards linear;
+    animation-timeline: scroll(y);
+}
+
+@keyframes indicator {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+header {
+    height: 100vh;
+    background: linear-gradient(white, rgb(28, 138, 165));
+    backdrop-filter: blur(10px);
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 80px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+header .header-container .header-left h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #333;
+    word-spacing: 3px;
+    letter-spacing: 2px;
+    pointer-events: none;
+}
+
+header .header-container .header-right ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+header .header-container .header-right ul li a {
+    font-size: 1.1rem;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+}
+
+header .header-container .header-right ul li:hover {
+    transform: translateY(-3px);
+    transition: all 0.5s ease;
+}
+
+header .header-container .header-right ul li a:hover {
+    color: orange;
+    transition: all 0.3s ease;
+}
+
+header .header-body {
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    height: fit-content;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 50px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+header .header-body .header-body-container {
+
+    height: 70vh;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+header .header-body .header-body-container .header-img {
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-color: rgba(100, 94, 94, 0.4);
+    border-radius: 20px;
+}
+
+header .header-body .header-body-container .header-description {
+    height: inherit;
+    padding: 20px 30px;
+}
+
+header .header-body .header-body-container .header-description .header-description-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+    word-spacing: 4px;
+    letter-spacing: 2px;
+}
+
+header .header-body .header-body-container .header-description .header-description-body {
+    line-height: 1.8;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 80%;
+}
+
+header .header-body .header-body-container .header-description .header-description-body::-webkit-scrollbar {
+    display: none;
+}
+
+main .projects {
+    height: 100vh;
+    background: linear-gradient(rgb(28, 138, 165), rgb(255, 255, 255));
+    backdrop-filter: blur(20px);
+    padding: 50px 0px;
+}
+
+main .projects .project-container .project-container-title {
+    margin: 0px auto;
+    margin-bottom: 20px;
+    word-spacing: 4px;
+    width: fit-content;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #333;
+    padding-top: 30px;
+    letter-spacing: 3px;
+    color: white;
+}
+
+main .projects .project-container .project-container-body {
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+}
+
+main .projects .project-container .project-container-body .project-card-wrapper {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+main .projects .project-container .project-container-body .project-card-wrapper .project-card {
+    height: 70vh;
+    width: 300px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+main .projects .project-container .project-container-body .project-card-wrapper .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+main .projects .project-container .project-container-body .project-card-wrapper .project-card .project-img {
+    aspect-ratio: 16/9;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: relative;
+}
+
+main .projects .project-container .project-container-body .project-card-wrapper .project-card .project-img .project-language {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: fit-content;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    color: rgb(201, 13, 201);
+    font-size: 0.8rem;
+}
+
+main .projects .project-container .project-container-body .project-card-wrapper .project-card .project-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+main .projects .project-container .project-container-body .project-card-wrapper .project-card .project-description .project-description-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 2px;
+    height: 10%;
+    align-items: center;
+    overflow: hidden;
+}
+
+main .projects .project-container .project-container-body .project-card-wrapper .project-card .project-description .project-description-scale {
+    font-size: 0.9rem;
+    font-weight: 400;
+    background: linear-gradient(to right, rgb(27, 207, 27), rgb(11, 138, 11));
+    width: fit-content;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+main .projects .project-container .project-container-body .project-card-wrapper .project-card .project-description .project-description-body {
+    height: 25%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+main .projects .project-container .project-container-body .project-card-wrapper .project-card .project-description .project-description-date {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+}
+
+main .projects .project-container .project-container-body .project-card-wrapper .project-card .project-description .project-description-date span i {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+main .skill {
+    height: 100vh;
+    background: linear-gradient(white, rgba(50, 226, 50, 0.952));
+}
+
+main .skill .skill-header {
+    margin: 0px auto;
+    word-spacing: 4px;
+    width: fit-content;
+    height: 20%;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #333;
+    padding-top: 30px;
+    letter-spacing: 3px;
+}
+
+main .skill .skill-body {
+    height: 80%;
+    align-items: center;
+    padding-top: 50px;
+}
+
+main .skill .skill-body .skill-body-container {
+    height: 40vh;
+    width: 80%;
+    backdrop-filter: blur(10px);
+    margin: 0px auto;
+    border-radius: 20px;
+    align-items: center;
+    padding: 20px 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+main .skill .skill-body .skill-body-container .skill-image-container {
+    margin: 0px auto;
+    height: 100%;
+    width: inherit;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+main .skill .skill-body .skill-body-container .skill-image-container::-webkit-scrollbar {
+    display: none;
+}
+
+main .skill .skill-body .skill-body-container .skill-image-container .skill-image-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-shrink: 0;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+            from {
+                translate: 0;
+            }
+
+            to {
+                translate: -100%;
+            }
+        }
+
+main .skill .skill-body .skill-body-container .skill-images {
+    height: 80%;
+    aspect-ratio: 1/1;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+main .contact-me {
+    height: 100vh;
+    background: linear-gradient(rgba(50, 226, 50, 0.952), white);
+    backdrop-filter: blur(10px);
+}
+
+main .contact-me .contact-me-container {
+    height: 100%;
+    padding: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+main .contact-me .contact-me-container .contact-me-container-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 3px;
+    word-spacing: 4px;
+    color: white;
+}
+
+main .contact-me .contact-me-container .contact-me-container-body {
+    height: 90%;
+    width: 100%;
+    padding: 10px 30px;
+}
+
+main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card {
+    height: 200px;
+    width: 400px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 20px 10px;
+    flex-shrink: 0;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card .contact-me-card-img {
+    height: 50%;
+    aspect-ratio: 1/1;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card .contact-me-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card .contact-me-details .contact-me-card-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card .contact-me-details .contact-me-card-description {
+    display: inline-block;
+    width: fit-content;
+}
+
+main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card .contact-me-details .contact-me-card-description p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    border-right: 3px solid black;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(28) infinite,
+    cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+main .about-me {
+    height: 100vh;
+    background: linear-gradient(white, rgb(255, 196, 0.5));
+    backdrop-filter: blur(10px);
+    padding: 30px 0px;
+}
+
+main .about-me .about-me-container {
+    height: 100%;
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+main .about-me .about-me-container .about-me-container-title {
+    word-spacing: 4px;
+    width: fit-content;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 3px;
+}
+
+main .about-me .about-me-container .about-me-container-body {
+    height: 80%;
+    width: 90%;
+    display: flex;
+    gap: 20px;
+    padding: 20px 30px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main .about-me .about-me-container .about-me-container-body .about-me-container-img {
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    flex-shrink: 0;
+    flex-shrink: 0;
+}
+
+main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper {
+    height: 100%;
+    aspect-ratio: 1.5/1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 0px;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper .about-me-card {
+    height: 30%;
+    width: 70%;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(30px);
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper .about-me-card .about-me-card-img {
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-color: rgb(34, 122, 255);
+    clip-path: circle(50% at 0 50%);
+}
+
+main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper .about-me-card .about-me-card-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper .about-me-card .about-me-card-body .about-me-card-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 2px;
+}
