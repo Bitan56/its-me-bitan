@@ -40,6 +40,13 @@ html::-webkit-scrollbar {
     }
 }
 
+@media (max-width: 480px) {
+    .scroll-indicator {
+        top: 0;
+        height: 5px;
+    }
+}
+
 header {
     height: 100vh;
     background: linear-gradient(white, rgb(28, 138, 165));
@@ -759,4 +766,14 @@ main .about-me .about-me-container .about-me-container-body .about-me-card-wrapp
     width: 300px;
    }
     
+}
+
+footer {
+    height: 150px;
+    background-color: rgba(0,0,0,1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
