@@ -27,7 +27,7 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><i class="fa-solid fa-bars"></i></li>
+                    <li onclick="dropHeaderMenu()"><i class="fa-solid fa-bars"></i></li>
                 </ul>
             </div>
         </div>
@@ -284,6 +284,17 @@
     </footer>
 
     <div class="scroll-indicator"></div>
+
+    <div class="drop-down-header-menu">
+        <ul>
+            <li onclick="dropHeaderMenu()"><a href="#project">Project</a></li>
+            <li onclick="dropHeaderMenu()"><a href="#skills">Skills</a></li>
+            <li onclick="dropHeaderMenu()"><a href="#contact">Contact</a></li>
+            <li onclick="dropHeaderMenu()"><a href="#about">About</a></li>
+        </ul>
+
+        <div class="cross-button" onclick="dropHeaderMenu()"><i class="fa-regular fa-circle-xmark"></i></div>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -548,13 +548,13 @@ main .contact-me .contact-me-container .contact-me-container-body .contact-me-ca
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    padding: 20px 10px;
+    padding: 20px 20px;
     flex-shrink: 0;
     display: flex;
     gap: 10px;
     cursor: pointer;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     transition: all 0.3s ease;
 }
 
@@ -568,6 +568,7 @@ main .contact-me .contact-me-container .contact-me-container-body .contact-me-ca
 
 main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card .contact-me-details {
     display: flex;
+    width: 70%;
     flex-direction: column;
     gap: 10px;
     flex-shrink: 0;
@@ -776,4 +777,55 @@ footer {
     align-items: center;
     justify-content: center;
     color: white;
+}
+
+.drop-down-header-menu {
+    position: absolute;
+    top: 0;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    color: white;
+    display: none;
+    overflow: hidden;
+}
+
+.drop-down-header-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.drop-down-header-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+
+.drop-down-header-menu .cross-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.drop-down-header-menu .cross-button i {
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .drop-down-header-menu {
+        display: block;
+        height: 0px;
+        transition: 0.5s ease;
+    }
 }
