@@ -24,7 +24,7 @@ html::-webkit-scrollbar {
     left: 0;
     height: 10px;
     width: 0;
-    background: linear-gradient(to right, rgb(122, 3, 146), rgb(4, 205, 231), rgb(28, 42, 247),rgb(3, 212, 3),rgb(255, 252, 59),rgb(255, 174, 53),rgb(226, 0, 0));
+    background: linear-gradient(to right, rgb(122, 3, 146), rgb(4, 205, 231), rgb(28, 42, 247), rgb(3, 212, 3), rgb(255, 252, 59), rgb(255, 174, 53), rgb(226, 0, 0));
     z-index: 100;
     animation: indicator forwards linear;
     animation-timeline: scroll(y);
@@ -51,7 +51,7 @@ header .header-container {
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    padding: 0 80px;
+    padding: 0 50px;
     background-color: transparent;
     backdrop-filter: blur(10px);
 }
@@ -69,6 +69,10 @@ header .header-container .header-right ul {
     display: flex;
     list-style: none;
     gap: 40px;
+}
+
+header .header-container .header-right ul li:last-child {
+    display: none;
 }
 
 header .header-container .header-right ul li a {
@@ -98,16 +102,15 @@ header .header-body {
     border-radius: 20px;
     padding: 10px;
     margin-top: 50px;
-    pointer-events: none;
     transition: all 0.3s ease;
 }
 
 header .header-body .header-body-container {
 
-    height: 70vh;
+    height: fit-content;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
-    padding: 40px;
+    padding: 20px;
     border-radius: 20px;
     display: flex;
     justify-content: space-around;
@@ -116,22 +119,27 @@ header .header-body .header-body-container {
 }
 
 header .header-body .header-body-container .header-img {
-    height: 100%;
-    aspect-ratio: 1/1;
+    height: 300px;
+    width: 300px;
     background-color: rgba(100, 94, 94, 0.4);
     border-radius: 20px;
+    flex-shrink: 0;
 }
 
 header .header-body .header-body-container .header-description {
-    height: inherit;
-    padding: 20px 30px;
+    height: 400px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 header .header-body .header-body-container .header-description .header-description-title {
+    height: 20%;
+    text-wrap: nowrap;
     font-size: 2.5rem;
     font-weight: 500;
     color: #333;
-    margin-bottom: 20px;
     word-spacing: 4px;
     letter-spacing: 2px;
 }
@@ -143,28 +151,117 @@ header .header-body .header-body-container .header-description .header-descripti
     height: 80%;
 }
 
-header .header-body .header-body-container .header-description .header-description-body::-webkit-scrollbar {
-    display: none;
+@media (max-width: 1024px) {
+    header .header-body .header-body-container .header-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    header .header-body .header-body-container .header-description {
+        height: 350px;
+        overflow-x: hidden;
+        overflow-x: scroll;
+    }
+
+    header .header-body .header-body-container .header-description .header-description-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 680px) {
+
+
+    header {
+        height: fit-content;
+    }
+
+    header .header-container .header-left h2 {
+        font-size: 1.5rem;
+    }
+
+    header .header-container .header-right ul {
+        gap: 20px;
+    }
+
+    header .header-body .header-body-container {
+        flex-direction: column;
+    }
+
+    header .header-body .header-body-container .header-img {
+        width: 300px;
+        height: 300px;
+    }
+
+    header .header-body .header-body-container .header-description {
+        width: 100%;
+        height: fit-content;
+    }
+
+    header .header-body .header-body-container .header-description .header-description-title {
+        font-size: 1.8rem;
+        height: fit-content;
+    }
+
+    header .header-body .header-body-container .header-description .header-description-body {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    header {
+        height: fit-content ;
+    }
+
+    header .header-container .header-right ul li {
+        display: none;
+    }
+
+    header .header-container .header-right ul li:last-child {
+        display: block;
+    }
+
+    header .header-body .header-body-container {
+        padding: 10px 0px;
+    }
+
+    header .header-body .header-body-container .header-img {
+        width: 250px;
+        height: 250px;
+    }
+
+    header .header-body .header-body-container .header-description {
+        height: fit-content;
+        padding: 0;
+    }
+
+    header .header-body .header-body-container .header-description .header-description-title {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    header .header-body .header-body-container .header-description .header-description-body {
+        line-height: 1.4;
+    }
 }
 
 main .projects {
     height: 100vh;
+    width: 100%;
     background: linear-gradient(rgb(28, 138, 165), rgb(255, 255, 255));
     backdrop-filter: blur(20px);
-    padding: 50px 0px;
+    padding: 20px 0px;
 }
 
 main .projects .project-container .project-container-title {
-    margin: 0px auto;
     margin-bottom: 20px;
     word-spacing: 4px;
-    width: fit-content;
     font-size: 2.5rem;
     font-weight: 500;
     color: #333;
-    padding-top: 30px;
     letter-spacing: 3px;
     color: white;
+    text-align: center;
 }
 
 main .projects .project-container .project-container-body {
@@ -180,11 +277,16 @@ main .projects .project-container .project-container-body .project-card-wrapper 
     justify-content: center;
     padding: 20px;
     display: flex;
-    gap: 20px;
+    gap: 40px;
+    padding: 20px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: mandatory;
+    justify-content: flex-start;
 }
 
 main .projects .project-container .project-container-body .project-card-wrapper .project-card {
-    height: 70vh;
+    height: 450px;
     width: 300px;
     background-color: aliceblue;
     border-radius: 20px;
@@ -275,6 +377,41 @@ main .projects .project-container .project-container-body .project-card-wrapper 
     color: rgba(0, 0, 0, 0.6);
 }
 
+@media (max-width: 1024px) {
+    main .projects {
+        height: fit-content;
+    }
+
+    main .projects .project-container .project-container-body .project-card-wrapper {
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-x: scroll;
+        scroll-snap-type: mandatory;
+        justify-content: flex-start;
+    }
+
+    main .projects .project-container .project-container-body .project-card-wrapper .project-card {
+        flex-shrink: 0;
+    }
+
+}
+
+@media (max-width: 480px) {
+    main .projects {
+        height: 100vh;
+    }
+
+    main .projects .project-container .project-container-body .project-card-wrapper {
+        gap: 40px;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-x: scroll;
+        scroll-snap-type: mandatory;
+        justify-content: flex-start;
+        transform: translateY(20%);
+    }
+}
+
 main .skill {
     height: 100vh;
     background: linear-gradient(white, rgba(50, 226, 50, 0.952));
@@ -299,7 +436,7 @@ main .skill .skill-body {
 }
 
 main .skill .skill-body .skill-body-container {
-    height: 40vh;
+    height: 250px;
     width: 80%;
     backdrop-filter: blur(10px);
     margin: 0px auto;
@@ -337,14 +474,14 @@ main .skill .skill-body .skill-body-container .skill-image-container .skill-imag
 }
 
 @keyframes spin {
-            from {
-                translate: 0;
-            }
+    from {
+        translate: 0;
+    }
 
-            to {
-                translate: -100%;
-            }
-        }
+    to {
+        translate: -100%;
+    }
+}
 
 main .skill .skill-body .skill-body-container .skill-images {
     height: 80%;
@@ -390,8 +527,11 @@ main .contact-me .contact-me-container .contact-me-container-body .contact-me-ca
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 20px 0px;
 }
 
 main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card {
@@ -449,7 +589,7 @@ main .contact-me .contact-me-container .contact-me-container-body .contact-me-ca
     white-space: nowrap;
     overflow: hidden;
     animation: typing 4s steps(28) infinite,
-    cursor .4s step-end infinite alternate;
+        cursor .4s step-end infinite alternate;
 }
 
 @keyframes cursor {
@@ -462,10 +602,18 @@ main .contact-me .contact-me-container .contact-me-container-body .contact-me-ca
     from {
         width: 0;
     }
+
     to {
         width: 100%;
     }
 }
+
+@media (max-width: 480px) {
+    main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card {
+        width: 100%;
+    }
+}
+
 
 main .about-me {
     height: 100vh;
@@ -475,7 +623,7 @@ main .about-me {
 }
 
 main .about-me .about-me-container {
-    height: 100%;
+    height: fit-content;
     width: 90%;
     margin: 0px auto;
     display: flex;
@@ -485,6 +633,7 @@ main .about-me .about-me-container {
 }
 
 main .about-me .about-me-container .about-me-container-title {
+    height: 60px;
     word-spacing: 4px;
     width: fit-content;
     font-size: 2.5rem;
@@ -494,18 +643,19 @@ main .about-me .about-me-container .about-me-container-title {
 }
 
 main .about-me .about-me-container .about-me-container-body {
-    height: 80%;
+    height: fit-content;
     width: 90%;
     display: flex;
     gap: 20px;
     padding: 20px 30px;
     align-items: center;
     justify-content: space-around;
+    transition: all 0.5s ease;
 }
 
 main .about-me .about-me-container .about-me-container-body .about-me-container-img {
-    height: 100%;
-    aspect-ratio: 1/1;
+    height: 400px;
+    width: 400px;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     flex-shrink: 0;
@@ -513,8 +663,8 @@ main .about-me .about-me-container .about-me-container-body .about-me-container-
 }
 
 main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper {
-    height: 100%;
-    aspect-ratio: 1.5/1;
+    height: 410px;
+    width: 620px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -526,10 +676,9 @@ main .about-me .about-me-container .about-me-container-body .about-me-card-wrapp
 }
 
 main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper .about-me-card {
-    height: 30%;
-    width: 70%;
+    height: 120px;
+    width: 430px;
     display: flex;
-    gap: 10px;
     padding: 0;
     background-color: rgb(255, 255, 255);
     backdrop-filter: blur(30px);
@@ -539,14 +688,15 @@ main .about-me .about-me-container .about-me-container-body .about-me-card-wrapp
 }
 
 main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper .about-me-card .about-me-card-img {
-    height: 100%;
-    aspect-ratio: 1/1;
+    height: 120px;
+    width: 120px;
     background-color: rgb(34, 122, 255);
     clip-path: circle(50% at 0 50%);
 }
 
 main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper .about-me-card .about-me-card-body {
-    padding: 10px;
+    width: 70%;
+    padding: 10px 0px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -558,4 +708,55 @@ main .about-me .about-me-container .about-me-container-body .about-me-card-wrapp
     font-weight: 500;
     color: #333;
     letter-spacing: 2px;
+    text-wrap: nowrap;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper .about-me-card .about-me-card-body .about-me-card-description {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.6;
+    height: 60px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+@media (max-width: 1280px) {
+
+    main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper {
+        width: 500px;
+    }
+    
+}
+
+@media (max-width: 1024px) {
+
+    main .about-me .about-me-container .about-me-container-body .about-me-container-img {
+        height: 300px;
+        width: 300px;
+    }
+
+    main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper {
+        width: fit-content;
+    }
+    
+}
+
+@media (max-width: 960px) {
+
+    main .about-me {
+        height: fit-content;
+    }
+
+   main .about-me .about-me-container .about-me-container-body {
+    flex-direction: column;
+   }
+
+   main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper .about-me-card {
+    width: 300px;
+   }
+    
 }
