@@ -131,6 +131,12 @@ header .header-body .header-body-container .header-img {
     background-color: rgba(100, 94, 94, 0.4);
     border-radius: 20px;
     flex-shrink: 0;
+    overflow: hidden;
+}
+
+header .header-body .header-body-container .header-img img {
+    height: 100%;
+    width: 100%;
 }
 
 header .header-body .header-body-container .header-description {
@@ -321,6 +327,12 @@ main .projects .project-container .project-container-body .project-card-wrapper 
     position: relative;
 }
 
+main .projects .project-container .project-container-body .project-card-wrapper .project-card .project-img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
 main .projects .project-container .project-container-body .project-card-wrapper .project-card .project-img .project-language {
     position: absolute;
     left: 10px;
@@ -496,6 +508,15 @@ main .skill .skill-body .skill-body-container .skill-images {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .skill .skill-body .skill-body-container .skill-images img {
+    height: 80%;
+    width: 80%;
+    opacity: 0.7;
 }
 
 main .contact-me {
@@ -561,9 +582,18 @@ main .contact-me .contact-me-container .contact-me-container-body .contact-me-ca
 main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card .contact-me-card-img {
     height: 50%;
     aspect-ratio: 1/1;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.0);
     border-radius: 10px;
     flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card .contact-me-card-img img {
+    height: 80%;
+    width: 80%;
 }
 
 main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card .contact-me-details {
@@ -668,6 +698,12 @@ main .about-me .about-me-container .about-me-container-body .about-me-container-
     border-radius: 20px;
     flex-shrink: 0;
     flex-shrink: 0;
+    overflow: hidden;
+}
+
+main .about-me .about-me-container .about-me-container-body .about-me-container-img img {
+    height: 100%;
+    width: 100%;
 }
 
 main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper {
