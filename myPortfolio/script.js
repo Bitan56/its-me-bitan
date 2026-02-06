@@ -8,3 +8,13 @@ const dropHeaderMenu = () => {
         headerMenu.style.height = '0px';
     }
 }
+
+const scrollToTopBtn = document.querySelector(".scroll-to-top-btn");
+
+window.addEventListener("scroll", () => {
+    if(window.pageYOffset > 100){
+        scrollToTopBtn.classList.add("active");
+    }else{
+        scrollToTopBtn.classList.remove("active");
+    }
+})

@@ -217,7 +217,7 @@ header .header-body .header-body-container .header-description .header-descripti
 @media (max-width: 480px) {
 
     header {
-        height: fit-content ;
+        height: fit-content;
     }
 
     header .header-container .header-right ul li {
@@ -737,7 +737,7 @@ main .about-me .about-me-container .about-me-container-body .about-me-card-wrapp
     main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper {
         width: 500px;
     }
-    
+
 }
 
 @media (max-width: 1024px) {
@@ -750,7 +750,7 @@ main .about-me .about-me-container .about-me-container-body .about-me-card-wrapp
     main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper {
         width: fit-content;
     }
-    
+
 }
 
 @media (max-width: 960px) {
@@ -759,19 +759,19 @@ main .about-me .about-me-container .about-me-container-body .about-me-card-wrapp
         height: fit-content;
     }
 
-   main .about-me .about-me-container .about-me-container-body {
-    flex-direction: column;
-   }
+    main .about-me .about-me-container .about-me-container-body {
+        flex-direction: column;
+    }
 
-   main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper .about-me-card {
-    width: 300px;
-   }
-    
+    main .about-me .about-me-container .about-me-container-body .about-me-card-wrapper .about-me-card {
+        width: 300px;
+    }
+
 }
 
 footer {
     height: 150px;
-    background-color: rgba(0,0,0,1);
+    background-color: rgba(0, 0, 0, 1);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
@@ -828,4 +828,35 @@ footer {
         height: 0px;
         transition: 0.5s ease;
     }
+}
+
+.scroll-to-top-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    height: 60px;
+    width: 60px;
+    background-color: blue;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s;
+}
+
+.scroll-to-top-btn.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.scroll-to-top-btn i {
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
 }
