@@ -132,6 +132,19 @@ header .header-body .header-body-container .header-img {
     border-radius: 20px;
     flex-shrink: 0;
     overflow: hidden;
+    animation: revealit linear both;
+    animation-duration: 3s;
+}
+
+@keyframes revealit {
+    from{
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 header .header-body .header-body-container .header-img img {
@@ -837,6 +850,10 @@ footer {
     align-items: center;
     justify-content: center;
     color: white;
+}
+
+footer .footer-container {
+    text-align: center;
 }
 
 .drop-down-header-menu {
