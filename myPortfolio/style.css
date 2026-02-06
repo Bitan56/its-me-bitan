@@ -505,7 +505,7 @@ main .skill .skill-body .skill-body-container .skill-image-container .skill-imag
 main .skill .skill-body .skill-body-container .skill-images {
     height: 80%;
     aspect-ratio: 1/1;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.0);
     border-radius: 10px;
     flex-shrink: 0;
     display: flex;
@@ -647,8 +647,28 @@ main .contact-me .contact-me-container .contact-me-container-body .contact-me-ca
 }
 
 @media (max-width: 480px) {
+
+    main .contact-me {
+        height: fit-content;
+    }
+
+    main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper {
+        height: fit-content;
+    }
+
     main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card {
         width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card .contact-me-details .contact-me-card-title {
+        font-size: 1rem;
+        text-wrap: nowrap;
+    }
+
+    main .contact-me .contact-me-container .contact-me-container-body .contact-me-card-wrapper .contact-me-card .contact-me-details {
+        align-items: center;
     }
 }
 
